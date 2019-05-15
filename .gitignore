@@ -127,3 +127,4 @@ obj
 gen
 build.ninja
 .ninja*
+.vscode

@@ -24,7 +24,7 @@ fi
 if [[ "$OUTPUT_PATH" != "dist/unknown" ]]; then
     echo "Compiling static binary for $OSTYPE ..."
     echo ""
-    pyinstaller --clean --onefile --paths ./pyproto --paths ./pyproto/packager/media/base --hidden-import pkgutil --distpath $OUTPUT_PATH pssh-box.py
+    pyinstaller --clean --onefile --paths ./pyproto --paths ./pyproto/packager/media/base --hidden-import pkgutil--hidden-import six --distpath $OUTPUT_PATH pssh-box.py
 else
     echo ""
     echo "Unsupported OS: $OSTYPE"
