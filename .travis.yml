@@ -5,6 +5,7 @@ matrix:
         - "2.7"
       install:
         - pip install -r ./src/requirements.txt
+      script: nosetests
     - language: node_js
       node_js:
         - 'stable'
