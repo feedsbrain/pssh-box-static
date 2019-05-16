@@ -32,4 +32,4 @@ console.log(pssh.path);
 
 ## Building the project
 
-Run `npm run build` to build the project
+Run `npm run build` to build the project on UNIX like operating system. Run `npm run build:win` to build the project on Windows.
