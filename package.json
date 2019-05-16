@@ -1,6 +1,6 @@
 {
   "name": "pssh-box-static",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PSSH-BOX static binnaries for Mac OSX, Linux and Windows",
   "main": "index.js",
   "files": [
