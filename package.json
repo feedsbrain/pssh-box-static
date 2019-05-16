@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "./src/build.sh",
+    "build:win": "cd src && build.cmd",
     "test": "tape test/*.js",
     "prepublishOnly": "npm run build && npm test"
   },

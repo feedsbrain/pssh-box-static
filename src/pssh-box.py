@@ -29,7 +29,7 @@ import widevine_pssh_data_pb2  # pylint: disable=g-import-not-at-top
 COMMON_SYSTEM_ID = base64.b16decode('1077EFECC0B24D02ACE33C1E52E2FB4B')
 WIDEVINE_SYSTEM_ID = base64.b16decode('EDEF8BA979D64ACEA3C827DCD51D21ED')
 PLAYREADY_SYSTEM_ID = base64.b16decode('9A04F07998404286AB92E65BE0885F95')
-
+MARLIN_SYSTEM_ID = base64.b16decode('5E629AF538DA4063897797FFBD9902D4')
 
 class BinaryReader(object):
   """A helper class used to read binary data from an binary string."""
@@ -102,6 +102,8 @@ class Pssh(object):
     elif self.system_id == PLAYREADY_SYSTEM_ID:
       system_name = 'PlayReady'
       convert_data = _parse_playready_data
+    elif self.system_id == MARLIN_SYSTEM_ID:
+      system_name = 'Marlin'
     elif self.system_id == COMMON_SYSTEM_ID:
       system_name = 'Common'
 
@@ -344,6 +346,16 @@ reasons.""")
                           action='store_const',
                           const=WIDEVINE_SYSTEM_ID,
                           help='Use the Widevine system ID')
+  system_ids.add_argument('--playready-system-id',
+                          dest='system_id',
+                          action='store_const',
+                          const=PLAYREADY_SYSTEM_ID,
+                          help='Use the PlayReady system ID')
+  system_ids.add_argument('--marlin-system-id',
+                          dest='system_id',
+                          action='store_const',
+                          const=MARLIN_SYSTEM_ID,
+                          help='Use the Marlin system ID')
 
   extra = parser.add_argument_group()
   extra.add_argument('--key-id',
