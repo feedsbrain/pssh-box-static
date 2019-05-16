@@ -1,0 +1,42 @@
+{
+  "name": "pssh-box-static",
+  "version": "0.0.1",
+  "description": "PSSH-BOX static binary for Mac OSX and Linux and Windows",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "bin"
+  ],
+  "scripts": {
+    "build": "./src/build.sh",
+    "test": "tape test/*.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feedsbrain/pssh-box-static.git"
+  },
+  "keywords": [
+    "pssh",
+    "pssh-box",
+    "static",
+    "library",
+    "binary",
+    "binaries",
+    "mac",
+    "linux",
+    "windows",
+    "widevine",
+    "playready",
+    "cenc"
+  ],
+  "author": "Indra Gunawan <feedsbrain@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/feedsbrain/pssh-box-static/issues"
+  },
+  "homepage": "https://github.com/feedsbrain/pssh-box-static#readme",
+  "devDependencies": {
+    "tape": "^4.10.1"
+  }
+}
