@@ -1,7 +1,10 @@
-language: node_js
+language: python
+python:
+  - "2.7"
+install:
+  - pip install -r ./src/requirements.txt
 node_js:
   - 'stable'
   - 'lts/*'
 script:
-  - npm run build
   - npm test
