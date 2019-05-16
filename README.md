@@ -1,34 +1,34 @@
-# shaka-packager-static
+# pssh-box-static
 
-[![Build Status](https://travis-ci.org/feedsbrain/shaka-packager-static.svg?branch=master)](https://travis-ci.org/feedsbrain/shaka-packager-static)
+[![Build Status](https://travis-ci.org/feedsbrain/pssh-box-static.svg?branch=master)](https://travis-ci.org/feedsbrain/pssh-box-static)
 
-**[Shaka Packager](https://github.com/google/shaka-packager) static binaries for Mac OSX and Linux and Windows.**
+**[PSSH-BOX](https://github.com/google/shaka-packager/tree/master/packager/tools/pssh) static binaries for Mac OSX, Linux and Windows.**
 
-Supports macOS (64-bit), Linux (32 and 64-bit) and Windows (32 and 64-bit). The current shaka-packager version is `2.3.0`.
+Currently on supports 64-bit architecture in macOS, Linux and Windows (because that's the only machines that I have to compile the binaries). The current `pssh-box` is taken from `shaka-packager` version is `2.3.0`.
 
-*Note:* The version of `shaka-packager-static` follows [SemVer](http://semver.org). When releasing new versions, **we do *not* consider breaking changes in `shaka-packager` itself**, but only the JS interface (see below). To stop `shaka-packager-static` from breaking your code by getting updated, [lock the version down](https://docs.npmjs.com/files/package.json#dependencies) or use a [lockfile](https://docs.npmjs.com/files/package-lock.json).
+*Note:* The version of `pssh-box-static` follows [SemVer](http://semver.org). When releasing new versions, **we do *not* consider breaking changes in `pssh-box` or `shaka-packager` itself**, but only the JS interface (see below). To stop `pssh-box-static` from breaking your code by getting updated, [lock the version down](https://docs.npmjs.com/files/package.json#dependencies) or use a [lockfile](https://docs.npmjs.com/files/package-lock.json).
 
 ## Installation
 
 This module is installed via npm:
 
 ``` bash
-$ npm install shaka-packager-static
+$ npm install pssh-box-static
 ```
 
 ## Example Usage
 
-Returns the path of a statically linked packager binary on the local filesystem.
+Returns the path of a statically linked `pssh-box` binary on the local filesystem.
 
 ``` js
-var packager = require('shaka-packager-static');
-console.log(packager.path);
-// /home/feedsbrain/workspaces/cool-project/node_modules/shaka-packager-static/bin/linux/x64/ffmpeg
+var pssh = require('pssh-box-static');
+console.log(pssh.path);
+// /home/feedsbrain/workspaces/cool-project/node_modules/pssh-box-static/bin/linux/x64/pssh-box
 ```
 
 ## Sources of the binaries
 
-[The build script](build/index.sh) downloads binaries from [Shaka Packager Releases](https://github.com/google/shaka-packager/releases/)
+[The build script](src/build.sh) will only compile the binary based on it's own build machine architecture. There are no cross architecture compilers at the moment. We will update this script if it's supported in the future.
 
 ## Building the project
 
